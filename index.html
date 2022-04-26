@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Billy Bonka's Candy Shop
+        </title> 
+        <link rel="icon" href="images/logo.jpg">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <meta name="keywords" content="Candy, candy, shop, store, online shopping, hard candy, chocolate">
+        <link rel="stylesheet" media="(max-width: 1000px)" href="smallstyle.css">
+        <link rel="stylesheet" media="(min-width: 1001px)" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script language="javascript">
+                function myFunction() {
+                                var links = document.getElementById("mobileLinks");
+                                if (links.style.display === "block") {
+                                        links.style.display = "none";
+                                } 
+                                else {
+                                        links.style.display = "block";
+                                }
+                                
+                        } 
+        </script>
+        <style>
+                h2 {
+                        text-align: center;
+                        font-family: Verdana;
+                }
+                .slideshow{
+                        max-width: 500px;
+                        position: relative;
+                        margin: auto;
+                }
+                
+                .prev, .next {
+                        cursor: pointer;
+                        position: absolute;
+                        top: 50%;
+                        width: auto;
+                        margin-top: -22px;
+                        padding: 16px;
+                        color: white;
+                        font-weight: bold;
+                        font-size: 18px;
+                        transition: 0.6s ease;
+                        border-radius: 0 3px 3px 0;
+                        user-select: none;
+                }
+                .next {
+                        right: 0;
+                        border-radius: 3px 0 0 3px;
+                }
+                #description{
+                        text-align: center;
+                        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        overflow-wrap: normal;
+                        margin-bottom: 100px;
+                }
+                footer{
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+</head>
+
+<body>
+        <div class = "banner">
+                <h1>
+                        <a href="index.html" ><img src="images/logo.jpg" height="180px" width="180px"></a>
+                </h1>
+        </div>
+        <div class="nav">
+                <div class="menu">
+                        <a href="shop.html">Gallery</a>
+                </div>
+                <div class="about">
+                        <a href="CandyAbout.html">Listings</a>
+                </div>
+                <div class="contact">
+                        <a href="contact.html">Login</a>
+                </div>
+                <div id="mobileLinks">
+                        <a href="shop.html">Gallery</a>
+                        <a href="CandyAbout.html">Art Listing</a>
+                        <a href="contact.html">Login</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                </a>  
+        </div>
+        <h2>
+                Welcome to our exclusive Art Gallery!
+        </h2> 
+        <div class="slideshow">
+                <div class="mySlides">
+                        <img src="images/art.jpg" style="width: 100%">
+                </div>
+                <div class="mySlides">
+                        <img src="images/eye.jpg" style="width: 100%">
+                </div>
+                <div class="mySlides">
+                        <img src="images/pixel.png" style="width: 100%">
+                </div>
+                <a class="prev" onclick="prevSlide()">&#10094;</a>
+                <a class="next" onclick="nextSlide()">&#10095;</a>
+        </div>
+        <div id="description">
+                With all of our art closely inspected, we only display the highest quality! <br>
+                Painting of the day: Mona Lisa!<br>
+                Our marketplace contains super exclusive art that you will only be able to find here!!
+                
+        </div>
+
+        <footer class="footer">
+                Contact us at 123-456-7890, or Artgallery@gallery.com!
+        </footer>
+</body>
+<script language="javascript">
+        $(document).ready(function () {
+                        $("h2").hide(0).delay(500).fadeIn(3000)
+                });
+</script>
+
+<script language="javascript">
+                var currentSlide = 0;
+                function prevSlide() {
+                        if(currentSlide === 0) {
+                                currentSlide = 2;
+                                showSlides(currentSlide);
+                        }
+                        else {
+                                showSlides(currentSlide--);
+                        }
+                }
+                function nextSlide() {
+                        if (currentSlide === 2) {
+                                currentSlide = 0;
+                                showSlides(currentSlide);
+                        }
+                        else {
+                                showSlides(currentSlide++);
+                        }
+                        
+                }
+                function showSlides(index) {
+                        var mySlides = document.getElementsByClassName("mySlides");
+                        for (let i = 0; i < mySlides.length; i++) {
+                                mySlides[i].style.display = "none";
+                        }
+                        mySlides[currentSlide].style.display = "block";
+                }
+                showSlides(currentSlide);
+</script>
+</html>
